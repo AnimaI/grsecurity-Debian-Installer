@@ -86,7 +86,7 @@ function secure_download {
 echo "==> Checking current versions of grsecurity ..."
 
 if [ $DOWNLOAD -eq 1 ]; then
-	secure_download https://grsecurity.net/latest_test_patch
+	secure_download https://survivor.k0nsl.org/grsecurity/latest_test_patch
 fi
 
 VERSIONS=`cat latest_test_patch | sed -e 's/\.patch//g' | sed -e 's/grsecurity-//g'`
@@ -126,7 +126,7 @@ echo "==> Installing grsecurity ${BRANCH} version $VERSION using kernel version 
 
 if [ ! -f spender-gpg-key.asc ]; then
 	echo "==> Downloading grsecurity GPG keys for package verification ... "
-	secure_download https://grsecurity.net/spender-gpg-key.asc
+	secure_download https://survivor.k0nsl.org/grsecurity/spender-gpg-key.asc
 
 	echo -n "==> Importing grsecurity GPG key ... "
 	gpg --import spender-gpg-key.asc &> /dev/null
